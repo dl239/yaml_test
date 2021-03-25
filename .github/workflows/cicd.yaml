@@ -8,14 +8,13 @@ jobs:
   fesql_sdk_cpp_sql_sdk_test_level_0:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/4paradigm/centos6_gcc7_fesql:0.0.1-legacy
+      image: ghcr.io/4paradigm/centos6_gcc7_hybridsql:latest
     steps:
       - uses: actions/checkout@v1
       - name: update nss
         run: yum update -y nss curl libcurl
       - name: set_up
-        run: |
-          mkdir /rambuild
+        run: mkdir /rambuild
 #          mkdir -p build/bin
       - uses: actions/upload-artifact@v1
         if: always()
@@ -26,14 +25,13 @@ jobs:
   fesql_sdk_cpp_sql_cluster_test_level_0:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/4paradigm/centos6_gcc7_fesql:0.0.1-legacy
+      image: ghcr.io/4paradigm/centos6_gcc7_hybridsql:latest
     steps:
       - uses: actions/checkout@v1
       - name: update nss
         run: yum update -y nss curl libcurl
       - name: set_up
-        run: |
-          mkdir /rambuild
+        run: mkdir /rambuild
       - uses: actions/upload-artifact@v1
         if: always()
         with:
