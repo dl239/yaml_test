@@ -9,9 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/4paradigm/centos6_gcc7_fesql:0.0.1-legacy
-      credentials:
-        username: $USER_NAME
-        password: ${{ secrets.DL_PAT }}
     steps:
       - uses: actions/checkout@v1
       - name: update nss
@@ -30,9 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/4paradigm/centos6_gcc7_fesql:0.0.1-legacy
-      credentials:
-        username: $USER_NAME
-        password: ${{ secrets.DL_PAT }}
     steps:
       - uses: actions/checkout@v1
       - name: update nss
