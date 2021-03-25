@@ -59,6 +59,7 @@ jobs:
         if: always()
         with:
           files: reports/*.xml
+          comment_title: Test Report
           report_individual_runs: true
           check_run_annotations: all tests, skipped tests
 
