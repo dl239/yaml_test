@@ -31,7 +31,10 @@ jobs:
       - name: update nss
         run: yum update -y nss curl libcurl
       - name: set_up
-        run: mkdir /rambuild
+        run: |
+          mkdir /rambuild
+          echo "xxx"
+          echo ${{ github.workspace }}
       - uses: actions/upload-artifact@v1
         if: always()
         with:
