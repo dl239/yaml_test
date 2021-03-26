@@ -7,9 +7,6 @@ env:
 jobs:
   fesql_sdk_cpp_sql_sdk_test_level_0:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: /fedb
     container:
       image: ghcr.io/4paradigm/centos6_gcc7_hybridsql:latest
     steps:
@@ -27,9 +24,6 @@ jobs:
 
   fesql_sdk_cpp_sql_cluster_test_level_0:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: /fedb
     container:
       image: ghcr.io/4paradigm/centos6_gcc7_hybridsql:latest
     steps:
@@ -42,6 +36,10 @@ jobs:
           echo "xxx"
           echo ${{ github.workspace }}
       - uses: actions/upload-artifact@v1
+        working-directory: ${{ github.workspace }}
+        run: |
+          echo "AAAAAA"
+          ls -R
         if: always()
         with:
           name: fesql_sdk_cpp_sql_cluster_test_level_0-report
