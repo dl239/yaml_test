@@ -36,7 +36,6 @@ jobs:
           echo "xxx"
           echo ${{ github.workspace }}
       - uses: actions/upload-artifact@v1
-        working-directory: ${{ github.workspace }}
         if: always()
         with:
           name: fesql_sdk_cpp_sql_cluster_test_level_0-report
